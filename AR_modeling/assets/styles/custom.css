@@ -1,0 +1,161 @@
+<style>
+@font-face {
+    font-family: "Computer Modern";
+    src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunss.otf');
+}
+@font-face {
+    font-family: "Computer Modern";
+    font-weight: bold;
+    src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunsx.otf');
+}
+@font-face {
+    font-family: "Computer Modern";
+    font-style: oblique;
+    src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunsi.otf');
+}
+@font-face {
+    font-family: "Computer Modern";
+    font-weight: bold;
+    font-style: oblique;
+    src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunso.otf');
+}
+div.cell{
+    width:1000px;
+    margin-left:4% !important;
+    margin-right:auto;
+}
+
+.step{
+    font-size:36px; 
+    font-weight: bold;
+}
+
+.sup-step{
+    font-size:22px; 
+    font-weight: bold;
+}
+
+/* Change global font size (for code) */
+.CodeMirror {
+font-size: 12px !important;
+/*font-family: monospace;*/
+}
+h1 {
+    font-family: Helvetica, serif;
+}
+h4{
+    margin-top:12px;
+    margin-bottom: 3px;
+}
+
+div.text_cell_render{
+    font-family: "Computer Modern", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    line-height: 160%;
+    font-size: 115%;
+    width:850px;
+    margin-left:auto;
+    margin-right:900px;
+}
+.CodeMirror{
+    font-family: "Source Code Pro", source-code-pro,Consolas, monospace;
+}
+/*.prompt{
+    display: None;
+}*/
+.text_cell_render h5 {
+    font-weight: bold;
+    text-decoration-line: underline;
+    font-size: 12pt;
+    font-style: italic;
+    margin-bottom: .5em;
+    margin-top: 0.5em;
+    display: block;
+}
+
+.warning{
+    color: rgb( 240, 20, 20 )
+}
+
+.alert-quiz {
+    color: #C42828;
+    color: #501111; /* better contrast */
+    background-color: #BE6767;
+    border-color: #BE6767;
+}
+
+/* Highlight boxes */
+/* The idea comes from: https://www.ibm.com/support/knowledgecenter/SSHGWL_1.2.3/analyze-data/markd-jupyter.html
+ * But: we don't want to write class="alert alert-info",
+ * we want to write: class="task" and class="another"
+ * That's why we define this here (+ better contrast) */
+.jp-RenderedHTMLCommon .alert-info {
+    color: var(--jp-info-color0);
+    color: #004E57; /* better contrast */
+    background-color: var(--jp-info-color3);
+    border-color: var(--jp-info-color2);
+}
+
+
+/* Highlight boxes, but with clearer name */
+.jp-RenderedHTMLCommon .task /* , .jp-RenderedHTMLCommon .another */ {
+    /* Defined by .alert */
+    padding: var(--jp-notebook-padding);
+    border: var(--jp-border-width) solid transparent;
+    border-radius: var(--jp-border-radius);
+    margin-bottom: 1em;
+}
+/* Defined by .alert-* with * element of (info, warning, ...) */ 
+.jp-RenderedHTMLCommon .task {
+    color: var(--jp-info-color0);
+    color: #004E57; /* better contrast */
+    background-color: var(--jp-info-color3);
+    border-color: var(--jp-info-color2);
+}
+/* .alert-info --> .task */
+.jp-RenderedHTMLCommon .task> p:last-child,
+.jp-RenderedHTMLCommon .task> ul:last-child {
+      margin-bottom: 0;
+}
+/*
+.jp-RenderedHTMLCommon .another{
+}
+*/
+/* Footnotes style */
+.footnote {
+    font-size: 80%;
+}
+/*
+ * Markdown autonumber headers (see https://stackoverflow.com/questions/19999696/are-numbered-headings-in-markdown-rdiscount-possible)
+ */
+body {
+    counter-reset: h1 h2 h3 h4;
+    /* h2 NEEDED! this makes sure the scope of h2 is kind of global */
+}
+
+h1 {
+    counter-increment: h1;
+    counter-set: h2;
+}
+
+h2 {
+    counter-increment: h2;
+    counter-set: h3; /*I've got no idea why this works and counter-reset not...*/
+}
+
+h3 {
+    counter-increment: h3;
+    counter-set: h4;
+}
+
+h2:before {
+    content: counter(h2) " ";
+}
+
+h3:before {
+    content: counter(h2) "." counter(h3) ". "
+}
+
+h4:before {
+    content: counter(h2) "." counter(h3) "." counter(h4) ". "
+}
+</style>

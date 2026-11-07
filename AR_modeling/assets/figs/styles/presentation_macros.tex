@@ -1,0 +1,67 @@
+$
+% This file contains all Latex used by the Jupyter notebooks
+% This is interpreted by MathJax, thus everything has to be in mathmode
+% However, blank lines are permitted inside this file
+% (Not when using this inside a Markdown block in Jupyter)
+
+% \ensuremath doesn't work/isn't needed, because *MathJax* is always in math mode
+
+% Scaled parentheses setting (big,bigg...)
+\newcommand{\bigcb}[1]{{\big\{#1\big\}}} % For the curly braces {}
+\newcommand{\Bigcb}[1]{{\Big\{#1\Big\}}}
+
+\newcommand{\bigsb}[1]{{\big[#1\big]}} % For the square brackets []
+\newcommand{\Bigsb}[1]{{\Big[#1\Big]}}
+\newcommand{\biggsb}[1]{{\bigg[#1\bigg]}}
+
+\newcommand{\bignp}[1]{\big(#1\big)} % For normal parentheses ()
+
+% Mathematical symbols and operators.
+\newcommand{\conj}[1]{#1^{\ast}} % Complex conjugate.
+\newcommand{\ztrans}{\mathcal{Z}}
+
+% Signal definition
+\newcommand{\fsamp}{{F_s}}
+\newcommand{\tsamp}{T_s}
+\newcommand{\tmidx}{n}
+\newcommand{\fqidx}{k}
+\newcommand{\ctmidx}{t}
+%
+\newcommand{\cfq}{f}                            % Frequency variable for the Fourier series. 
+%
+\newcommand{\tdsa}[2][\ctmidx]{#2(#1)}
+\newcommand{\tds}[2][\tmidx]{{#2(#1)}}
+\newcommand{\fdvar}[2][\idxa]{#2_{#1}}
+\newcommand{\zds}[2][z]{{#2}(#1)}
+
+% \MakeUppercase nor uppercase works, so manually adjusted
+\newcommand{\fdsa}[2][\cfq]{#2_a(#1)}           % Fourier transform of an analogue signal.
+\newcommand{\fdsd}[2][\cfqts]{#2(#1)}           % Fourier transform of an analogue signal.
+\newcommand{\cfqts}{\cfq\tsamp}
+% Defining generic indices. 
+\newcommand{\idxa}{k}
+
+% Z transform function
+\newcommand{\zpow}[1][-1]{z^{#1}}
+
+% Mathematical function definitions
+\newcommand{\fcn}[1]{{\text{#1}}}
+
+% Different types of "this means" arrows.
+\newcommand{\LIerlt}{\Longleftrightarrow}
+
+% Formatting for matrices and vectors.
+\newcommand{\mat}[1]{\mathbf{#1}}
+
+% Formatting for parentheses.
+\newcommand{\cbr}[1]{\big\{#1\big\}}
+\newcommand{\nbr}[1]{\big(#1\big)}
+%
+% Acronyms/transforms etc.
+\newcommand{\idft}[1][\idxa]{\text{IDFT}_{#1}}
+\newcommand{\unit}[1]{\text{$\,$#1}}
+
+%
+% Typical signal typesetting
+\newcommand{\sifcna}[2][T]{\tdsa[#2]{sc_{#1}}}
+$
